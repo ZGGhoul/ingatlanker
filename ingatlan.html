@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /*alpértelmezett dark mode használata*/
+        tailwind.config={
+            darkMode:'class'
+        }
+    </script>
+    <script src="getData.js"></script>
+    <script src="getUniqueValues.js"></script>
+    <script src="maindoga.js" defer></script>
+    <title>Ingatlaniroda</title>
+</head>
+
+<body class="dark">
+<div class="min-h-screen max-w-[1200px] bg-slate-200  dark:bg-slate-600 dark:text-white mx-auto">
+    <header class=" py-5 ">
+        <h1 class="text-3xl font-bold underline text-center">Ingatlaniroda</h1>
+    </header>
+    <main>
+        <ul onchange="getUserOption(event)" class="flex-col items-center max-w-[300px] mx-auto text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center ps-3">
+                    <input id="category" type="radio" value="category" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="category" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ház </label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center ps-3">
+                    <input id="author" type="radio" value="category" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="author" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lakás</label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center ps-3">
+                    <input id="author" type="radio" value="category" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="author" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nyaraló</label>
+                </div>
+            </li>
+        </ul>
+        <!--checkbox container-->
+        <ul class="m-2 checkContainer flex flex-wrap  justify-center  items-center  text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">    
+        </ul>
+        <!--checkbox container :end-->
+        <div class="flex justify-center">
+            <button onclick="handleClick()" type="button" class="text-white bg-blue-400 dark:bg-blue-700 disabled:dark:bg-blue-200 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 text-center" disabled>Keresés</button>
+        </div>
+        <!--cards-->
+        <div class="cards flex flex-wrap gap-2 justify-center"></div>
+        
+    </main>
+</div>
+</body>
+
+</html>
